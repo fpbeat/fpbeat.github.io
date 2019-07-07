@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>video map</title>
+    <link href="bundle.css" rel="stylesheet">
+    <script src="js/app.bundle.js"></script>
+</head>
+<body><input type="button" class="button" value="Открыть редактор" style="margin: 50px; padding: 8px 25px">
+<script>document.addEventListener("DOMContentLoaded", () => {
+    Gymap.create('.button', {
+        onClose: function (data) {
+            localStorage.setItem('gymap', JSON.stringify(data));
+        },
+        videoID: 'zlNlkwB27lU',
+        data: JSON.parse(localStorage.getItem('gymap')) || {},
+    });
+});</script>
+</body>
+</html>
